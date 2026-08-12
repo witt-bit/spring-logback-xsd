@@ -4,8 +4,8 @@
 		https://github.com/enricopulatzo/logback-XSD
 		https://github.com/nkatsar/logback-XSD
 -->
-<xsd:schema targetNamespace="http://ch.qos.logback/xml/ns/logback"
-						xmlns="http://ch.qos.logback/xml/ns/logback"
+<xsd:schema targetNamespace="http://ch.qos.logback/xml/ns/logback-spring"
+						xmlns="http://ch.qos.logback/xml/ns/logback-spring"
 						xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 						elementFormDefault="qualified"
 						attributeFormDefault="unqualified"
