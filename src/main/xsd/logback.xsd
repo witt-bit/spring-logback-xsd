@@ -20,6 +20,7 @@
 			<xsd:element name="statusListener" minOccurs="0" maxOccurs="unbounded" type="StatusListener"/>
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
 			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
+			<xsd:element name="turboFilter" minOccurs="0" maxOccurs="unbounded" type="TurboFilter"/>
 			<xsd:element name="conversionRule" minOccurs="0" maxOccurs="unbounded" type="ConversionRule"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
 			<xsd:element name="contextName" minOccurs="0" maxOccurs="1" type="xsd:string"/>
@@ -247,6 +248,7 @@
 			<xsd:element name="contextListener" minOccurs="0" maxOccurs="unbounded" type="ContextListener"/>
 			<xsd:element name="jmxConfigurator" minOccurs="0" maxOccurs="1" type="JmxConfigurator"/>
 			<xsd:element name="conversionRule" minOccurs="0" maxOccurs="unbounded" type="ConversionRule"/>
+			<xsd:element name="turboFilter" minOccurs="0" maxOccurs="unbounded" type="TurboFilter"/>
 			<xsd:element name="include" minOccurs="0" maxOccurs="unbounded" type="Include"/>
 			<xsd:element name="contextName" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 			<xsd:element name="define" minOccurs="0" maxOccurs="unbounded" type="Define"/>
@@ -316,6 +318,14 @@
 
 	<xsd:complexType name="JmxConfigurator"/>
 
+
+		<xsd:complexType name="TurboFilter">
+			<xsd:sequence>
+				<xsd:any minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="class" type="xsd:string" use="required"/>
+			<xsd:anyAttribute/>
+		</xsd:complexType>
 	<xsd:complexType name="ConnectionSource">
 		<xsd:sequence>
 			<xsd:element name="driverClass" type="xsd:string"/>
