@@ -78,6 +78,8 @@
 		<xsd:sequence>
 			<xsd:any minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="optional"/>
+			<xsd:attribute name="class" type="xsd:string" use="required"/>
 		<xsd:anyAttribute/>
 	</xsd:complexType>
 
