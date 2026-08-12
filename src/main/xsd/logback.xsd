@@ -6,13 +6,32 @@
 -->
 <xsd:schema targetNamespace="http://ch.qos.logback/xml/ns/logback-spring"
 						xmlns="http://ch.qos.logback/xml/ns/logback-spring"
+						xmlns:lb="http://ch.qos.logback/xml/ns/logback-spring"
 						xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 						elementFormDefault="qualified"
 						attributeFormDefault="unqualified"
 						version="1.2">
 
-	<xsd:element name="configuration" type="Configuration"/>
-	<xsd:element name="included" type="Configuration"/>
+	<xsd:element name="configuration" type="Configuration">
+		<xsd:key name="appenderName">
+			<xsd:selector xpath=".//lb:appender"/>
+			<xsd:field xpath="@name"/>
+		</xsd:key>
+		<xsd:keyref name="appenderRef" refer="appenderName">
+			<xsd:selector xpath=".//lb:appender-ref"/>
+			<xsd:field xpath="@ref"/>
+		</xsd:keyref>
+	</xsd:element>
+	<xsd:element name="included" type="Configuration">
+		<xsd:key name="appenderNameIncluded">
+			<xsd:selector xpath=".//lb:appender"/>
+			<xsd:field xpath="@name"/>
+		</xsd:key>
+		<xsd:keyref name="appenderRefIncluded" refer="appenderNameIncluded">
+			<xsd:selector xpath=".//lb:appender-ref"/>
+			<xsd:field xpath="@ref"/>
+		</xsd:keyref>
+	</xsd:element>
 
 	<xsd:complexType name="Configuration">
 		<xsd:choice maxOccurs="unbounded">
