@@ -145,14 +145,19 @@
 			<xsd:element name="file" minOccurs="0" maxOccurs="1" type="xsd:string"/>
 			<xsd:element name="withJansi" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="encoder" minOccurs="0" maxOccurs="1" type="Encoder"/>
-			<xsd:element name="filter" minOccurs="0" maxOccurs="1" type="Filter"/>
+			<xsd:element name="filter" minOccurs="0" maxOccurs="unbounded" type="Filter"/>
 			<xsd:element name="append" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="prudent" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
 			<xsd:element name="layout" minOccurs="0" maxOccurs="1" type="Layout"/>
 			<xsd:element name="rollingPolicy" minOccurs="0" maxOccurs="1" type="RollingPolicy"/>
 			<xsd:element name="connectionSource" minOccurs="0" maxOccurs="1" type="ConnectionSource"/>
 			<xsd:element name="triggeringPolicy" minOccurs="0" maxOccurs="1" type="TriggeringPolicy"/>
-			<xsd:element name="appender-ref" minOccurs="0" maxOccurs="1" type="AppenderRef"/>
+			<xsd:element name="appender-ref" minOccurs="0" maxOccurs="unbounded" type="AppenderRef"/>
+			<xsd:element name="queueSize" minOccurs="0" maxOccurs="1" type="xsd:positiveInteger"/>
+			<xsd:element name="discardingThreshold" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
+			<xsd:element name="neverBlock" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+			<xsd:element name="includeCallerData" minOccurs="0" maxOccurs="1" type="xsd:boolean"/>
+			<xsd:element name="maxFlushTime" minOccurs="0" maxOccurs="1" type="xsd:integer"/>
 			<xsd:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:choice>
 		<xsd:attribute name="name" type="xsd:string" use="required"/>
